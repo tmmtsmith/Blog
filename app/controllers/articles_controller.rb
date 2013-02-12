@@ -10,7 +10,8 @@ class ArticlesController < ApplicationController
 	end
 	def create
 	  @article = Article.new
-	  @article.title = params[:article][:title][:body]
+	  @article.title = params[:article][:title]
+	  @article.body = params[:article][:body]
 	  @article.save
 	  redirect_to article_path(@article)
 	end
