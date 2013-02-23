@@ -1,11 +1,12 @@
 class Article < ActiveRecord::Base
   # Prevents mass assignment error
-  attr_accessible :title, :body, :tag_list
+  attr_accessible :title, :body, :tag_list, :image
   
   # The many end of a SQL foreign key relationship
   has_many :comments
   has_many :taggings
   has_many :tags, through: :taggings
+  has_attached_file :image
   
   def tag_list
 	return self.tags.join(", ")
