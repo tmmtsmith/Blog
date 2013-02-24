@@ -4,7 +4,7 @@
   <% @articles.each do |article| %>
     <li>
       <%= link_to article.title, article_path(article) %>
-	  <% if logged_in? %><%= link_to "Create a New Article", new_article_path, class: "new_article" %><% end %>
+	  <p><% if logged_in? %><%= link_to "New Post", new_article_path, class: "new_article" %><% end %></p>
     </li>
   <% end %>
 </ul>
