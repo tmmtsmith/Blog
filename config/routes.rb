@@ -7,4 +7,5 @@ Blog::Application.routes.draw do
 	resources :articles
 	resources :comments
 	resources :tags
+	resources :authors
 end
